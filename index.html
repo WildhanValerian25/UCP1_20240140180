@@ -1,62 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Community</title>
+    <title>Tech Community | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .hero-section { background: #212529; color: white; padding: 60px 0; }
+        .navbar-brand { font-weight: bold; }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Tech Community</a>
-            <div class="navbar-nav">
-                <a class="nav-link active" href="index.html">Home</a>
-                <a class="nav-link" href="form.html">Join Us</a>
-                <a class="nav-link" href="gallery.html">Gallery</a>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container mt-5">
-        <div class="text-center mb-5">
-            <h1>Welcome to Tech Community</h1>
-            <p class="lead">A community dedicated to fostering innovation and collaboration in technology. Join us to connect with like-minded individuals, share knowledge, and build amazing projects together.</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="./index.html">Tech Community</a>
+        <div class="navbar-nav">
+            <a class="nav-link active" href="./index.html">Home</a>
+            <a class="nav-link" href="./form.html">Join Us</a>
+            <a class="nav-link" href="./gallery.html">Multimedia</a>
         </div>
+    </div>
+</nav>
 
-        <h2>Members</h2>
-        <table class="table table-striped">
-            <thead>
+
+<header class="hero-section text-center">
+    <div class="container">
+        <h1>Welcome to Tech Community</h1>
+        <p class="lead">Website ini merupakan tempat Mahasiswa untuk belajar bagaimana kolaborasi di dunia teknologi dan pengetahuan.</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <h2 class="mb-4 text-center">Daftar Anggota Komunitas</h2>
+    <div class="table-responsive bg-white p-4 shadow-sm rounded">
+        <table class="table table-hover">
+            <thead class="table-dark">
                 <tr>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Email</th>
-                    <th>Interest</th>
+                    <th>Bidang Minat</th>
                 </tr>
             </thead>
-            <tbody id="membersTable">
-                <!-- Data will be loaded here -->
-            </tbody>
+            <tbody id="memberTableBody">
+                </tbody>
         </table>
     </div>
+</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load members from localStorage
-        function loadMembers() {
-            const members = JSON.parse(localStorage.getItem('members')) || [];
-            const tableBody = document.getElementById('membersTable');
-            tableBody.innerHTML = '';
-            members.forEach(member => {
-                const row = `<tr>
-                    <td>${member.name}</td>
-                    <td>${member.email}</td>
-                    <td>${member.interest}</td>
-                </tr>`;
-                tableBody.innerHTML += row;
-            });
-        }
-        loadMembers();
-    </script>
+<script>
+    // Simulasi data sementara menggunakan Array
+    const members = [
+        { nama: "Wildhan Valerian", email: "wildhan@tech.com", minat: "Cyber Security" },
+        { nama: "Tejo Cahyo", email: "tejo@tech.com", minat: "Full Stack Development" },
+        { nama: "Budi Santoso", email: "budi@tech.com", minat: "Data Science" }
+    ];
+
+    const tableBody = document.getElementById('memberTableBody');
+    members.forEach(member => {
+        let row = `<tr>
+            <td>${member.nama}</td>
+            <td>${member.email}</td>
+            <td>${member.minat}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,39 +1,86 @@
-/* Custom styles for Tech Community website */
+/* style.css */
+
+/* 1. Pengaturan Font & Warna Dasar */
+:root {
+    --primary-color: #0d6efd; /* Biru khas Tech */
+    --secondary-color: #404a54; /* Gelap untuk kesan Profesional */
+    --accent-color: #198754; /* Hijau untuk tombol Sukses */
+    --light-bg: #f8f9fa;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: #4e4343;
 }
 
-.navbar-brand {
-    font-weight: bold;
+/* 2. Styling Navigasi */
+.navbar {
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.table {
-    margin-top: 20px;
+.nav-link {
+    transition: all 0.3s ease;
 }
 
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+/* 3. Hero Section (Header di Index) */
+.hero-section {
+    background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+    padding: 80px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 40px;
+}
+
+/* 4. Styling Kartu & Tabel agar terlihat 'Clean' */
+.card, .table-responsive {
+    border: none;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* 5. Styling Form */
 .form-control, .form-select {
-    border-radius: 0.375rem;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #929ba4;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    border-color: var(--primary-color);
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+/* 6. Tombol Kustom */
+.btn-success {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
 }
 
-.alert {
-    margin-top: 20px;
-}
-
-iframe {
-    border-radius: 0.375rem;
+/* 7. Multimedia Gallery */
+iframe, img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 audio {
-    width: 100%;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
 }
